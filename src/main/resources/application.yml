@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: MultiGenesys-Assessment
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/resource_booking?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username:
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret:
+    expiration-ms: 3600000
+
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        orm:
+          connections:
+            pooling: OFF
